@@ -27,8 +27,8 @@ export const App = () => {
           <ContactForm />
           <h2>Contacts</h2>
           <Filter />
-          <ContactList />
-          {/* {!isLoading && !error && <ContactList />} */}
+          {/* <ContactList /> */}
+          {!isLoading && !error && <ContactList />}
           <Toaster />
         </div>
       </section>
