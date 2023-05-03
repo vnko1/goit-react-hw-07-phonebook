@@ -6,7 +6,7 @@ import { ContactForm, ContactList, Filter } from './phoneBook';
 import { Loader } from './phoneBook/loader/Loader';
 
 export const App = () => {
-  const { isFetching, isError, error } = useFetchContactsQuery();
+  const { data, isFetching, isError, error } = useFetchContactsQuery();
 
   useEffect(() => {
     if (error) toast.error(error);
@@ -21,7 +21,7 @@ export const App = () => {
           <ContactForm />
           <h2>Contacts</h2>
           <Filter />
-          <ContactList />
+          <ContactList contacts={data} />
           {!isFetching && !isError && <ContactList />}
           <Toaster />
         </div>
