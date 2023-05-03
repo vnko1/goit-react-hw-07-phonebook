@@ -1,5 +1,9 @@
-export { contactsReducer } from "./contactsSlice";
-export { setFilter, filterReducer } from "./filterSlice";
-export { initialState } from "./initialState";
-export * from "./selectors";
-export * from "./operations";
+export {
+  contactsApi,
+  useFetchContactsQuery,
+  useAddContactMutation,
+  useDeleteContactMutation,
+} from './contactsApi';
+export { setFilter, filterReducer } from './filterSlice';
+
+export * from './selectors';

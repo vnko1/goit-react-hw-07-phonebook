@@ -1,6 +1,6 @@
-import { useSelector, useDispatch } from "react-redux";
-import { setFilter, selectFilter } from "redux/index";
-import css from "./Filter.module.css";
+import { useSelector, useDispatch } from 'react-redux';
+import { setFilter, selectFilter } from 'redux/index';
+import css from './Filter.module.css';
 
 const Filter = () => {
   const filter = useSelector(selectFilter);

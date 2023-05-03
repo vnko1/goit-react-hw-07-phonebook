@@ -1,6 +1,6 @@
-import PropTypes from "prop-types";
-import { AiFillContacts } from "react-icons/ai";
-import css from "./ContactList.module.css";
+import PropTypes from 'prop-types';
+import { AiFillContacts } from 'react-icons/ai';
+import css from './ContactList.module.css';
 
 export const Contact = ({ name, phone }) => {
   return (
