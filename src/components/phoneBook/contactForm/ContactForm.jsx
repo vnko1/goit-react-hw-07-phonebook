@@ -1,10 +1,10 @@
-import { useCallback } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import toast from 'react-hot-toast';
-import { addContacts, selectContacts } from 'redux/index';
-import { submitSchema } from 'components/services';
-import { Formik, Field, Form, ErrorMessage } from 'formik';
-import css from './ContactForm.module.css';
+import { useCallback } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import toast from "react-hot-toast";
+import { addContacts, selectContacts } from "redux/index";
+import { submitSchema } from "components/services/index";
+import { Formik, Field, Form, ErrorMessage } from "formik";
+import css from "./ContactForm.module.css";
 
 const ContactForm = () => {
   const contacts = useSelector(selectContacts);
@@ -13,7 +13,7 @@ const ContactForm = () => {
   const onSubmit = useCallback(
     (values, action) => {
       const isIncluded = contacts.some(
-        contact =>
+        (contact) =>
           contact.name.toLowerCase() === values.name.toLowerCase().trim()
       );
 
@@ -22,8 +22,9 @@ const ContactForm = () => {
         toast.error(`${values.name.trim()} is already in contacts`);
         return;
       }
-      const contact = { name: values.name.trim(), phone: values.number.trim() };
-      dispatch(addContacts(contact));
+      dispatch(
+        addContacts({ name: values.name.trim(), phone: values.number.trim() })
+      );
 
       action.resetForm();
     },
@@ -33,7 +34,7 @@ const ContactForm = () => {
   return (
     <div className={css.container}>
       <Formik
-        initialValues={{ name: '', number: '' }}
+        initialValues={{ name: "", number: "" }}
         validationSchema={submitSchema}
         onSubmit={onSubmit}
       >
