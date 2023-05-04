@@ -21,8 +21,7 @@ export const App = () => {
           <ContactForm />
           <h2>Contacts</h2>
           <Filter />
-          <ContactList contacts={data} />
-          {!isFetching && !isError && <ContactList />}
+          {!isFetching && !isError && <ContactList contacts={data} />}
           <Toaster />
         </div>
       </section>

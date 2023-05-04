@@ -1,3 +1,7 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+}
 .itemContainer {
   margin-left: 8px;
   display: flex;
@@ -5,13 +9,7 @@
   gap: 8px;
 }
 
-.item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.item:not(:last-child) {
+.list:not(:last-child) {
   margin-bottom: 16px;
 }
 
