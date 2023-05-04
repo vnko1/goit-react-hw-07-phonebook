@@ -54,6 +54,8 @@ const contactsSlice = createSlice({
   },
 });
 
+export const contactsReducer = contactsSlice.reducer;
+
 // const contactsSlice = createSlice({
 //   name: 'contacts',
 //   initialState: initialState.contacts,
@@ -99,5 +101,3 @@ const contactsSlice = createSlice({
 //     },
 //   },
 // });
-
-export const contactsReducer = contactsSlice.reducer;
