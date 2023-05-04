@@ -8,7 +8,7 @@ const Filter = () => {
 
   return (
     <label className={css.container}>
-      <span>Find contacts by name</span>
+      <span className={css.title}>Find contacts by name</span>
       <input
         className={css.input}
         type="text"

@@ -1,10 +1,12 @@
 import PropTypes from 'prop-types';
 import { AiFillContacts } from 'react-icons/ai';
-import css from './ContactList.module.css';
+import { ThreeDots } from 'react-loader-spinner';
 import { useDeleteContactMutation } from 'redux/index';
+import css from './ContactList.module.css';
 
 export const Contact = ({ name, phone, id }) => {
-  const [deleteContacts] = useDeleteContactMutation();
+  const [deleteContacts, { isLoading }] = useDeleteContactMutation();
+
   return (
     <div className={css.container}>
       <div className={css.itemContainer}>
@@ -15,8 +17,20 @@ export const Contact = ({ name, phone, id }) => {
         className={css.button}
         type="button"
         onClick={() => deleteContacts(id)}
+        disabled={isLoading}
       >
-        Delete
+        {isLoading ? (
+          <ThreeDots
+            height="18"
+            width="40"
+            radius="9"
+            color="white"
+            ariaLabel="three-dots-loading"
+            visible={true}
+          />
+        ) : (
+          'Delete'
+        )}
       </button>
     </div>
   );
@@ -25,4 +39,5 @@ export const Contact = ({ name, phone, id }) => {
 Contact.propTypes = {
   name: PropTypes.string.isRequired,
   phone: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
 };

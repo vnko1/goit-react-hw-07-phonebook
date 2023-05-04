@@ -1,3 +1,7 @@
+.list {
+  list-style: none;
+}
+
 .container {
   display: flex;
   justify-content: space-between;
@@ -9,12 +13,16 @@
   gap: 8px;
 }
 
-.list:not(:last-child) {
+.item:not(:last-child) {
   margin-bottom: 16px;
 }
 
 .button {
-  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  max-height: 30px;
   border-radius: 5px;
   cursor: pointer;
   border: none;

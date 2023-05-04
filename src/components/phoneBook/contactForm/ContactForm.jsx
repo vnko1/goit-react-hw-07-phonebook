@@ -1,5 +1,6 @@
 import { useCallback } from 'react';
 import toast from 'react-hot-toast';
+
 import { useFetchContactsQuery, useAddContactMutation } from 'redux/index';
 import { submitSchema } from 'components/services/index';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
@@ -25,6 +26,7 @@ const ContactForm = () => {
         name: values.name.trim(),
         phone: values.number.trim(),
       });
+      toast.success('Contact successfully added!');
 
       action.resetForm();
     },
